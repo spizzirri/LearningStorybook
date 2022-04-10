@@ -1179,7 +1179,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
+                "file": "src/app/components/pure-task-list/pure-task-list.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1187,7 +1187,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/pure-task-list/pure-task-list.stories.ts",
+                "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1355,17 +1355,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
+                "file": "src/app/components/pure-task-list/pure-task-list.stories.ts",
                 "type": "Story",
-                "defaultValue": "args => ({\n  props: args,\n})"
+                "defaultValue": "args => ({\n  props: {\n    ...args,\n    onPinTask: TaskStories.actionsData.onPinTask,\n    onArchiveTask: TaskStories.actionsData.onArchiveTask,\n  },\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/pure-task-list/pure-task-list.stories.ts",
+                "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
                 "type": "Story",
-                "defaultValue": "args => ({\n  props: {\n    ...args,\n    onPinTask: TaskStories.actionsData.onPinTask,\n    onArchiveTask: TaskStories.actionsData.onArchiveTask,\n  },\n})"
+                "defaultValue": "args => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1456,40 +1456,6 @@
                     "defaultValue": "args => ({\n  props: {\n    ...args,\n    onPinTask: actionsData.onPinTask,\n    onArchiveTask: actionsData.onArchiveTask,\n  },\n})"
                 }
             ],
-            "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Error",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
-                    "type": "Story",
-                    "defaultValue": "args => ({\n  props: args,\n})"
-                },
-                {
-                    "name": "WithInteractions",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                }
-            ],
             "src/app/components/pure-task-list/pure-task-list.stories.ts": [
                 {
                     "name": "Default",
@@ -1528,6 +1494,40 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/components/pure-task-list/pure-task-list.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Error",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
+                    "type": "Story",
+                    "defaultValue": "args => ({\n  props: args,\n})"
+                },
+                {
+                    "name": "WithInteractions",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 }
