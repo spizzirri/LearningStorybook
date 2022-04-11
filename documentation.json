@@ -832,7 +832,7 @@
         },
         {
             "name": "TaskComponent",
-            "id": "component-TaskComponent-4bdea41de227d60e21a3b8fc89b9351d",
+            "id": "component-TaskComponent-f1cd49dfb952147bf96264d7f4b63aa6",
             "file": "src/app/components/task/task.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -842,13 +842,13 @@
             "selector": "app-task",
             "styleUrls": [],
             "styles": [],
-            "template": " <div class=\"list-item {{ task?.state }}\">\n  <label class=\"checkbox\">\n    <input\n      type=\"checkbox\"\n      [defaultChecked]=\"task?.state === 'TASK_ARCHIVED'\"\n      disabled=\"true\"\n      name=\"checked\"\n    />\n    <span class=\"checkbox-custom\" (click)=\"onArchive(task.id)\" attr.aria-label=\"archiveTask-{{ task?.id }}\"></span>\n  </label>\n  <div class=\"title\">\n    <input\n      type=\"text\"\n      [value]=\"task?.title\"\n      readonly=\"true\"\n      placeholder=\"Input title\"\n    />\n  </div>\n  <div class=\"actions\">\n    <a *ngIf=\"task?.state !== 'TASK_ARCHIVED'\" (click)=\"onPin(task.id)\">\n      <span class=\"icon-star\" attr.aria-label=\"pinTask-{{ task?.id }}\"></span>\n    </a>\n  </div>\n</div>\n",
+            "template": " <div class=\"list-item {{ task?.state }}\">\n  <label class=\"checkbox\">\n    <input\n      type=\"checkbox\"\n      [defaultChecked]=\"task?.state === 'TASK_ARCHIVED'\"\n      disabled=\"true\"\n      name=\"checked\"\n    />\n    <span class=\"checkbox-custom\" (click)=\"onArchive(task.id)\" attr.aria-label=\"archiveTask-{{ task?.id }}\"></span>\n  </label>\n  <div class=\"title\">\n    <input\n      type=\"text\"\n      [value]=\"task?.title\"\n      readonly=\"true\"\n      placeholder=\"Input title\"\n      style=\"background: red;\"\n    />\n  </div>\n  <div class=\"actions\">\n    <a *ngIf=\"task?.state !== 'TASK_ARCHIVED'\" (click)=\"onPin(task.id)\">\n      <span class=\"icon-star\" attr.aria-label=\"pinTask-{{ task?.id }}\"></span>\n    </a>\n  </div>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
                 {
                     "name": "task",
-                    "line": 34,
+                    "line": 35,
                     "type": "Task"
                 }
             ],
@@ -856,13 +856,13 @@
                 {
                     "name": "onArchiveTask",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "line": 42,
+                    "line": 43,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onPinTask",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "line": 38,
+                    "line": 39,
                     "type": "EventEmitter"
                 }
             ],
@@ -879,20 +879,20 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 55,
+                    "line": 56,
                     "description": "<p>Component method to trigger the onArchive event</p>\n",
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 1455,
-                                "end": 1457,
+                                "pos": 1491,
+                                "end": 1493,
                                 "flags": 0,
                                 "escapedText": "id"
                             },
                             "type": "any",
                             "tagName": {
-                                "pos": 1449,
-                                "end": 1454,
+                                "pos": 1485,
+                                "end": 1490,
                                 "flags": 0,
                                 "escapedText": "param"
                             },
@@ -911,20 +911,20 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 48,
+                    "line": 49,
                     "description": "<p>Component method to trigger the onPin event</p>\n",
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 1319,
-                                "end": 1321,
+                                "pos": 1355,
+                                "end": 1357,
                                 "flags": 0,
                                 "escapedText": "id"
                             },
                             "type": "any",
                             "tagName": {
-                                "pos": 1313,
-                                "end": 1318,
+                                "pos": 1349,
+                                "end": 1354,
                                 "flags": 0,
                                 "escapedText": "param"
                             },
@@ -938,7 +938,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { Task } from '../../models/task.model';\n\n@Component({\n  selector: 'app-task',\n  template: `\n      <div class=\"list-item {{ task?.state }}\">\n       <label class=\"checkbox\">\n         <input\n           type=\"checkbox\"\n           [defaultChecked]=\"task?.state === 'TASK_ARCHIVED'\"\n           disabled=\"true\"\n           name=\"checked\"\n         />\n         <span class=\"checkbox-custom\" (click)=\"onArchive(task.id)\" attr.aria-label=\"archiveTask-{{ task?.id }}\"></span>\n       </label>\n       <div class=\"title\">\n         <input\n           type=\"text\"\n           [value]=\"task?.title\"\n           readonly=\"true\"\n           placeholder=\"Input title\"\n         />\n       </div>\n       <div class=\"actions\">\n         <a *ngIf=\"task?.state !== 'TASK_ARCHIVED'\" (click)=\"onPin(task.id)\">\n           <span class=\"icon-star\" attr.aria-label=\"pinTask-{{ task?.id }}\"></span>\n         </a>\n       </div>\n     </div>\n  `,\n})\nexport class TaskComponent {\n  @Input() task: Task;\n\n  // tslint:disable-next-line: no-output-on-prefix\n  @Output()\n  onPinTask = new EventEmitter<Event>();\n\n  // tslint:disable-next-line: no-output-on-prefix\n  @Output()\n  onArchiveTask = new EventEmitter<Event>();\n\n  /**\n  * Component method to trigger the onPin event\n  * @param id string\n  */\n  onPin(id: any) {\n    this.onPinTask.emit(id);\n  }\n  /**\n  * Component method to trigger the onArchive event\n  * @param id string\n  */\n  onArchive(id: any) {\n   this.onArchiveTask.emit(id);\n  }\n}",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { Task } from '../../models/task.model';\n\n@Component({\n  selector: 'app-task',\n  template: `\n      <div class=\"list-item {{ task?.state }}\">\n       <label class=\"checkbox\">\n         <input\n           type=\"checkbox\"\n           [defaultChecked]=\"task?.state === 'TASK_ARCHIVED'\"\n           disabled=\"true\"\n           name=\"checked\"\n         />\n         <span class=\"checkbox-custom\" (click)=\"onArchive(task.id)\" attr.aria-label=\"archiveTask-{{ task?.id }}\"></span>\n       </label>\n       <div class=\"title\">\n         <input\n           type=\"text\"\n           [value]=\"task?.title\"\n           readonly=\"true\"\n           placeholder=\"Input title\"\n           style=\"background: red;\"\n         />\n       </div>\n       <div class=\"actions\">\n         <a *ngIf=\"task?.state !== 'TASK_ARCHIVED'\" (click)=\"onPin(task.id)\">\n           <span class=\"icon-star\" attr.aria-label=\"pinTask-{{ task?.id }}\"></span>\n         </a>\n       </div>\n     </div>\n  `,\n})\nexport class TaskComponent {\n  @Input() task: Task;\n\n  // tslint:disable-next-line: no-output-on-prefix\n  @Output()\n  onPinTask = new EventEmitter<Event>();\n\n  // tslint:disable-next-line: no-output-on-prefix\n  @Output()\n  onArchiveTask = new EventEmitter<Event>();\n\n  /**\n  * Component method to trigger the onPin event\n  * @param id string\n  */\n  onPin(id: any) {\n    this.onPinTask.emit(id);\n  }\n  /**\n  * Component method to trigger the onArchive event\n  * @param id string\n  */\n  onArchive(id: any) {\n   this.onArchiveTask.emit(id);\n  }\n}",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": ""
@@ -1179,7 +1179,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/pure-task-list/pure-task-list.stories.ts",
+                "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1187,7 +1187,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
+                "file": "src/app/components/pure-task-list/pure-task-list.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1219,17 +1219,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\n  production: false\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "Error",
@@ -1355,17 +1355,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/pure-task-list/pure-task-list.stories.ts",
+                "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
                 "type": "Story",
-                "defaultValue": "args => ({\n  props: {\n    ...args,\n    onPinTask: TaskStories.actionsData.onPinTask,\n    onArchiveTask: TaskStories.actionsData.onArchiveTask,\n  },\n})"
+                "defaultValue": "args => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
+                "file": "src/app/components/pure-task-list/pure-task-list.stories.ts",
                 "type": "Story",
-                "defaultValue": "args => ({\n  props: args,\n})"
+                "defaultValue": "args => ({\n  props: {\n    ...args,\n    onPinTask: TaskStories.actionsData.onPinTask,\n    onArchiveTask: TaskStories.actionsData.onArchiveTask,\n  },\n})"
             },
             {
                 "name": "Template",
@@ -1456,6 +1456,40 @@
                     "defaultValue": "args => ({\n  props: {\n    ...args,\n    onPinTask: actionsData.onPinTask,\n    onArchiveTask: actionsData.onArchiveTask,\n  },\n})"
                 }
             ],
+            "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Error",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
+                    "type": "Story",
+                    "defaultValue": "args => ({\n  props: args,\n})"
+                },
+                {
+                    "name": "WithInteractions",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
             "src/app/components/pure-task-list/pure-task-list.stories.ts": [
                 {
                     "name": "Default",
@@ -1498,38 +1532,14 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
-            "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts": [
+            "src/environments/environment.ts": [
                 {
-                    "name": "Default",
+                    "name": "environment",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Error",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
-                    "type": "Story",
-                    "defaultValue": "args => ({\n  props: args,\n})"
-                },
-                {
-                    "name": "WithInteractions",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -1540,16 +1550,6 @@
                     "file": "src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: true\n}"
-                }
-            ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
                 }
             ],
             "src/stories/Button.stories.ts": [
